@@ -1,19 +1,18 @@
 import React, { Component } from "react";
-import NavBar from "./components/layout/NavBar";
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/dashboard/Dashboard";
 import ProjectDetails from "./components/projects/ProjectDetails";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import CreateProject from "./components/projects/CreateProject";
-import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <Router>
+      <BrowserRouter>
         <div className="App">
-          <NavBar />
+          <Navbar />
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route path="/project/:id" component={ProjectDetails} />
@@ -22,7 +21,7 @@ class App extends Component {
             <Route path="/create" component={CreateProject} />
           </Switch>
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }

@@ -1,42 +1,42 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { createProject } from "../../store/actions/actionCreators";
+import { createProject } from "../../store/actions/projectActions";
 
 class CreateProject extends Component {
   state = {
     title: "",
     content: ""
   };
-  changeHandler = e => {
+  handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
     });
   };
-  submitHandler = e => {
+  handleSubmit = e => {
     e.preventDefault();
+    // console.log(this.state);
     this.props.createProject(this.state);
-    //console.log(this.state);
+    this.props.history.push("/");
   };
-
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.submitHandler} className="white">
-          <h5 className="grey-text text-darken-3">Create Project!</h5>
+        <form className="white" onSubmit={this.handleSubmit}>
+          <h5 className="grey-text text-darken-3">Create a New Project</h5>
           <div className="input-field">
-            <label htmlFor="title">Title</label>
-            <input type="text" id="title" onChange={this.changeHandler} />
+            <input type="text" id="title" onChange={this.handleChange} />
+            <label htmlFor="title">Project Title</label>
           </div>
           <div className="input-field">
-            <label htmlFor="content">Project Content</label>
             <textarea
               id="content"
               className="materialize-textarea"
-              onChange={this.changeHandler}
+              onChange={this.handleChange}
             />
+            <label htmlFor="content">Project Content</label>
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Create</button>
+            <button className="btn pink lighten-1">Create</button>
           </div>
         </form>
       </div>
@@ -44,11 +44,11 @@ class CreateProject extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
   return {
     createProject: project => dispatch(createProject(project))
   };
-}
+};
 
 export default connect(
   null,
