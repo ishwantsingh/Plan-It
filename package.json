@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-redux-firebase": "^2.2.6"
+  }
+}
