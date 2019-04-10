@@ -1,6 +1,6 @@
-# Post-It
+# Plan-It
 
-Welcome to Plan-it Web App!
+Welcome to [Plan-it Web App!](https://plan-it-88.firebaseapp.com)
 
  Screenshot: 
 ![alt text][Screenshot]
