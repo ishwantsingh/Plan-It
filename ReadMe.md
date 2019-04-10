@@ -2,6 +2,11 @@
 
 Welcome to Plan-it Web App!
 
+ Screenshot: 
+![alt text][Screenshot]
+ 
+[Screenshot]: https://github.com/ishwantsingh/Plan-It/blob/master/plan-it/src/Screenshot%20(73).png "Screenshot"
+
 # Tech-Stack
 
 ## Back-End 
